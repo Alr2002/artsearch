@@ -37,6 +37,6 @@ Please find more detailed information about some popular errors below.
 | 403 | Forbidden | The API key doesn't have permission to perform the request. |  
 | 404 | Not Found | You can get 404 error if data with requested parameters (`lat`, `lon` and `date`) does not exist in service database. You must not retry the same request. |
 | 409 | Conflict | The request conflicts  with another request (perhaps due to using the same idempotent key). |
-| 424 | External Dependency Failed | The request couldn't be completed due to a failure in a dependency  external to OpenWeathermap. |
+| 424 | External Dependency Failed | The request couldn't be completed due to a failure in a dependency  external to Art Search API. |
 | 429 | Too Many Requests | You can get 429 error if key quota of requests for provided API to this API was exceeded. You may retry request after some time or after extending your key quota. |
 | 5xx | Unexpected Error | You can get '5xx' error in case of other internal errors. Error Response code will be `5xx`. Please contact us and enclose an example of your API request that receives this error into your email to let us analyze it and find a solution for you promptly. You may retry the request which led to this error. |

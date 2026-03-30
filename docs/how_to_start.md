@@ -2,50 +2,42 @@
 
 ## Prerequisites
 
-To start working with the One Call API 3.0, register and log in to your account. Then select your subscription plan and receive your API key.
+To start working with the Art Search API, register and log in to [your account](https://artsearch.io/console/). Then select your subscription plan and receive your API key.
 
-!!! info "Note"
-
-    One Call API 3.0 is included in the "One Call by Call" subscription **only**. Select the type of data you want to receive from One Call API 3.0:  
-         - Current and forecast weather data  
-         - Weather overview
 
 ## Authentication
 
-One Call API 3.0 uses API key authentication. You can obtain your API key in your account on the tab `API keys`.
-You can generate as many keys as needed for your subscription. 
+Art Search API uses API key authentication. You can get a free one by simply [signing up here.](https://artsearch.io/console/).  
+Once you have your API key, you have to put it in the request URL for every request you make like so `api-key`=**YOUR-API-KEY**.  
+Alternatively, you can put the API key in the request header as `x-api-key`. 
 
 ## How to make an API call
 
-### Base URL
-
-`https://api.openweathermap.org/data/3.0`
-
-### Endpoint - Current and forecast weather data
-
-`/onecall`
-
-This endpoint is used to get access to current weather, minute forecast fo 1 hour, hourly forecast for 48 hours, daily forecast for 8 days and government weather alerts.
-
-### API call
-
-Method - **GET**
-```
-https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API_key}
-```
-
-### Required parameters
-
-|Parameter|Required/Optional|Description|
------------|:-------:|-----------|
-|[`lat`][1]   | required | Latitude (from -90 to 90). If you need the geocoder to automatic convert city names and zip-codes to geo coordinates and the other way around, please use our [Geocoding API](https://openweathermap.org/api/geocoding-api) | 
-|[`lon`][1] |required|Longitude (from -180 to 180). If you need the geocoder to automatic convert city names and zip-codes to geo coordinates and the other way around, please use our [Geocoding API](https://openweathermap.org/api/geocoding-api)
-| [`appid`][1]|required|Your unique API key (you can always find it on your account page under the ["API key" tab](https://home/openweathermap.org/api_keys))
-| [`exclude`][1] |optional|By using this parameter you can exclude some parts of the weather data from the API response. It should be a comma-delimited list (without spaces). Available values: `current` `minutely` `hourly` `daily` `alerts`
-|[`units`][1] |optional|Units of measurement `standard`,`metric` and `imperial` units are available. If you do not use the `units` parameter, `standard` units will be applied by default. [Learn more](https://openweathermap.org/api/one-call-3?collection=one_call_api_3.0#data) |
-| [`lang`][1] |optional|You can use the `lang` parameter to get the output in your language. [Learn more](https://openweathermap.org/api/one-call-3?collection=one_call_api_3.0#multi) |
+1.	Pick a function (endpoint) such as [Search Artworks](https://artsearch.io/docs/search-artworks-api/) and then copy and paste the demo code in your development environment.
+2.	Optional: Download an [SDK](https://artsearch.io/sdks/) for your language to use the API seamlessly.
+3.	Optional: Play with all APIs by using the [Postman Collection](https://www.postman.com/spoonacular-api/workspace/art-search-api/collection/7431899-342abc51-7005-43a3-b88d-7499c69da460?action=share&creator=7431899).
 
 
-[1]: https://     "string"
+## Base URL
 
+`https://api.artsearch.io`
 
+## Endpoints
+
+### [Search Artworks](search_artworks.md)
+
+`/artworks`
+
+Search and filter artworks by query, creation time, material, technique, and origin. The natural language search uses semantic AI to understand the context of your query, so you can search for artworks by their style, subject, or even emotions they evoke. The API returns a list of artworks matching the given criteria.
+
+### [Retrieve Artwork by Id](retrieve_artwork_by_id.md)
+
+`/artworks/{id}`
+
+Get one artwork by its id. The API returns the title, image URL, start and end date, and a description of the artwork.
+
+### [Random Artwork](random_artwork.md)
+
+`/artworks/random`
+
+Get one random artwork from our vast collection. The API returns comprehensive details including the title, high-quality image URL, creation date range, and a rich description providing historical and artistic context.
