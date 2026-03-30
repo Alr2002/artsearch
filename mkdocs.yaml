@@ -2,7 +2,8 @@
 site_name: Art Search API Documentation Test Site
 site_description: Art Search API Documentation Test Site
 site_author: <OR>
-site_url: https://Alr2002.github.io/artsearch/
+# site_url: https://Alr2002.github.io/artsearch/
+site_url: !ENV READTHEDOCS_CANONICAL_URL
 copyright: |
     Copyright &copy; 2026 OR
 nav:
