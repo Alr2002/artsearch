@@ -46,7 +46,7 @@ theme:
     - scheme: slate
       toggle:
         icon: material/weather-sunny
-        name: Dark mode
+        name: Light mode
       primary: blue grey
       accent: deep blue
 
@@ -54,7 +54,7 @@ theme:
     - scheme: default
       toggle:
         icon: material/weather-night
-        name: Light mode
+        name: Dark mode
       primary: blue grey
       accent: indigo
 #  font:
